@@ -1,0 +1,159 @@
+---
+const faqs = [
+  {
+    question: "Quelles sont vos zones d'intervention ?",
+    answer: "Nous intervenons principalement à Avignon et dans un rayon de 30 km autour de la ville, couvrant l'ensemble du Vaucluse et les communes limitrophes du Gard et des Bouches-du-Rhône. N'hésitez pas à nous contacter pour vérifier votre secteur.",
+  },
+  {
+    question: "Proposez-vous des devis gratuits ?",
+    answer: "Oui, tous nos devis sont gratuits et sans engagement. Après un premier échange téléphonique, nous planifions une visite sur site pour évaluer vos besoins, prendre les mesures nécessaires et vous soumettre un devis détaillé sous 48 heures.",
+  },
+  {
+    question: "Quelle est la meilleure période pour créer un jardin ?",
+    answer: "L'automne (septembre à novembre) et le printemps (mars à mai) sont les périodes idéales pour planter et aménager un jardin en Provence. Les températures douces favorisent l'enracinement. En été, nous adaptons nos interventions aux conditions climatiques pour protéger vos plantations.",
+  },
+  {
+    question: "Utilisez-vous des produits respectueux de l'environnement ?",
+    answer: "Oui, nous privilégions systématiquement des méthodes alternatives et des produits homologués. Notre approche de la permaculture et du traitement phytosanitaire raisonné vise à réduire l'impact sur l'écosystème tout en étant efficace contre les maladies et nuisibles.",
+  },
+  {
+    question: "Intervenez-vous en urgence pour l'élagage ou l'abattage ?",
+    answer: "Oui, nous disposons d'une capacité d'intervention rapide pour les situations urgentes (branches dangereuses, arbres fragilisés après une tempête). Contactez-nous directement par téléphone au 06 67 72 48 05 pour évaluer la situation et planifier une intervention.",
+  },
+  {
+    question: "Proposez-vous des contrats d'entretien annuel ?",
+    answer: "Absolument. Nous proposons des contrats d'entretien annuel sur mesure, adaptés à la superficie et aux besoins spécifiques de votre jardin. Ces contrats incluent des passages réguliers (tonte, taille, désherbage) planifiés tout au long de l'année à un tarif avantageux.",
+  },
+];
+---
+
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <header class="section-header reveal">
+      <span class="section-tag">Questions fréquentes</span>
+      <h2 class="section-title" id="faq-title">Vous avez des questions ?</h2>
+      <p class="section-subtitle">Retrouvez les réponses aux questions que nos clients posent le plus souvent.</p>
+    </header>
+
+    <dl class="faq__list reveal">
+      {faqs.map((faq, i) => (
+        <div class={`faq__item reveal reveal-delay-${(i % 3) + 1}`}>
+          <details class="faq__details">
+            <summary class="faq__question" aria-expanded="false">
+              <span>{faq.question}</span>
+              <span class="faq__icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9l6 6 6-6"/>
+                </svg>
+              </span>
+            </summary>
+            <dd class="faq__answer">
+              <p>{faq.answer}</p>
+            </dd>
+          </details>
+        </div>
+      ))}
+    </dl>
+
+    <div class="faq__cta reveal">
+      <p>Vous ne trouvez pas votre réponse ?</p>
+      <a href="#contact" class="btn btn-primary">Posez votre question</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .faq {
+    padding-block: var(--space-4xl);
+    background-color: var(--color-neutral);
+  }
+
+  .faq__list {
+    max-width: 760px;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .faq__item {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition);
+  }
+
+  .faq__item:has(.faq__details[open]) {
+    box-shadow: var(--shadow-md);
+  }
+
+  .faq__details {
+    width: 100%;
+  }
+
+  .faq__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    padding: var(--space-lg) var(--space-xl);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: var(--text-md);
+    color: var(--color-text);
+    list-style: none;
+    min-height: 60px;
+    transition: color var(--transition), background-color var(--transition);
+    user-select: none;
+  }
+
+  .faq__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq__details[open] .faq__question {
+    color: var(--color-primary);
+    background-color: rgba(64, 114, 67, 0.04);
+  }
+
+  .faq__icon {
+    flex-shrink: 0;
+    color: var(--color-primary);
+    transition: transform var(--transition);
+    display: flex;
+  }
+
+  .faq__details[open] .faq__icon {
+    transform: rotate(180deg);
+  }
+
+  .faq__answer {
+    padding: var(--space-md) var(--space-xl) var(--space-lg);
+    color: var(--color-text-light);
+    line-height: 1.8;
+    border-top: 1px solid var(--color-neutral-dark);
+    margin-inline: var(--space-xl);
+    padding-inline: 0;
+  }
+
+  .faq__cta {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .faq__cta p {
+    color: var(--color-text-light);
+    font-size: var(--text-lg);
+  }
+
+  @media (min-width: 768px) {
+    .faq__question {
+      font-size: var(--text-lg);
+    }
+  }
+</style>

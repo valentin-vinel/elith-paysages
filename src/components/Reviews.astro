@@ -1,0 +1,250 @@
+---
+const reviews = [
+  {
+    name: "Marie L.",
+    date: "Janvier 2025",
+    text: "Très satisfaite de l'entretien de mon jardin. L'équipe est professionnelle, ponctuelle et vraiment à l'écoute. Mon jardin n'a jamais été aussi beau, je recommande sans hésiter !",
+  },
+  {
+    name: "Pierre D.",
+    date: "Décembre 2024",
+    text: "Excellent travail pour la création de notre terrasse en pierres. Les finitions sont impeccables et l'intégration paysagère est superbe. Rapport qualité-prix très satisfaisant.",
+  },
+  {
+    name: "Sophie M.",
+    date: "Novembre 2024",
+    text: "Elith Paysages a transformé notre terrain en friche en un magnifique jardin de permaculture. Passionné et pédagogue, il nous a appris à entretenir notre espace naturellement.",
+  },
+  {
+    name: "Jean-Paul R.",
+    date: "Octobre 2024",
+    text: "Élagage de nos grands pins réalisé en toute sécurité et dans les délais prévus. Nettoyage parfait après l'intervention. Je referai appel à eux sans aucune hésitation.",
+  },
+  {
+    name: "Isabelle V.",
+    date: "Septembre 2024",
+    text: "Installation d'un système d'arrosage automatique très bien pensé. Nos plantations sont en pleine forme cet été. Merci pour les précieux conseils sur l'économie d'eau !",
+  },
+  {
+    name: "Thomas G.",
+    date: "Août 2024",
+    text: "Engazonnement de qualité avec un gazon en rouleaux magnifique. La préparation du sol a été très soignée, le résultat est bluffant. À recommander absolument.",
+  },
+];
+---
+
+<section class="reviews" id="avis" aria-labelledby="reviews-title">
+  <div class="container">
+    <header class="section-header reveal">
+      <span class="section-tag">Ce qu'on dit de nous</span>
+      <h2 class="section-title" id="reviews-title">Avis de nos clients</h2>
+      <div class="reviews__global" aria-label="Note globale : 5 étoiles sur 5, basée sur 8 avis Google">
+        <div class="reviews__global-stars" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#B5833A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#B5833A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#B5833A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#B5833A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="#B5833A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <span class="reviews__global-score">5/5</span>
+        <span class="reviews__global-count">· 8 avis Google</span>
+      </div>
+    </header>
+
+    <div class="reviews__wrapper reveal">
+      <div class="reviews__track" id="reviews-track" role="list" aria-label="Carrousel d'avis clients">
+        {reviews.map((review) => (
+          <article class="reviews__card" role="listitem" aria-label={`Avis de ${review.name}`}>
+            <div class="reviews__card-stars" aria-label="5 étoiles sur 5" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#B5833A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#B5833A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#B5833A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#B5833A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#B5833A"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <blockquote class="reviews__text">
+              <p>"{review.text}"</p>
+            </blockquote>
+            <footer class="reviews__card-footer">
+              <div class="reviews__avatar" aria-hidden="true">{review.name.charAt(0)}</div>
+              <div>
+                <p class="reviews__reviewer">{review.name}</p>
+                <p class="reviews__date">{review.date}</p>
+              </div>
+            </footer>
+          </article>
+        ))}
+      </div>
+
+      <div class="reviews__controls" aria-label="Navigation du carrousel">
+        <button class="reviews__btn" id="reviews-prev" aria-label="Avis précédent">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <div class="reviews__dots" id="reviews-dots" aria-hidden="true"></div>
+        <button class="reviews__btn" id="reviews-next" aria-label="Avis suivant">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .reviews {
+    padding-block: var(--space-4xl);
+    background-color: var(--color-bg);
+    overflow: hidden;
+  }
+
+  .reviews__global {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .reviews__global-stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  .reviews__global-score {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .reviews__global-count {
+    color: var(--color-text-light);
+    font-size: var(--text-sm);
+  }
+
+  .reviews__wrapper {
+    position: relative;
+  }
+
+  .reviews__track {
+    display: flex;
+    gap: var(--space-lg);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-bottom: var(--space-md);
+  }
+
+  .reviews__track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .reviews__card {
+    flex: 0 0 min(320px, 85vw);
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-sm);
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    border-top: 3px solid var(--color-accent);
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+
+  .reviews__card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .reviews__card-stars {
+    display: flex;
+    gap: 2px;
+  }
+
+  .reviews__text {
+    color: var(--color-text-light);
+    font-size: var(--text-sm);
+    line-height: 1.8;
+    font-style: italic;
+    flex: 1;
+  }
+
+  .reviews__card-footer {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-neutral-dark);
+  }
+
+  .reviews__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: var(--text-md);
+    flex-shrink: 0;
+  }
+
+  .reviews__reviewer {
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: var(--color-text);
+  }
+
+  .reviews__date {
+    font-size: 0.75rem;
+    color: var(--color-text-light);
+  }
+
+  .reviews__controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+
+  .reviews__btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    border: 2px solid var(--color-neutral-dark);
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition);
+    cursor: pointer;
+  }
+
+  .reviews__btn:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .reviews__dots {
+    display: flex;
+    gap: 6px;
+  }
+
+  @media (min-width: 768px) {
+    .reviews__card {
+      flex: 0 0 360px;
+    }
+  }
+</style>

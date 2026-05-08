@@ -1,0 +1,417 @@
+---
+---
+
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="container">
+    <header class="section-header reveal">
+      <span class="section-tag">Nous contacter</span>
+      <h2 class="section-title" id="contact-title">Parlons de votre projet</h2>
+      <p class="section-subtitle">Devis gratuit et sans engagement. Réponse sous 24 heures.</p>
+    </header>
+
+    <div class="contact__inner">
+      <div class="contact__form-col reveal">
+        <form class="contact__form" name="contact" method="POST" enctype="multipart/form-data" aria-label="Formulaire de demande de devis">
+          <div class="contact__row">
+            <div class="contact__field">
+              <label for="nom" class="contact__label">Nom <span aria-hidden="true">*</span></label>
+              <input type="text" id="nom" name="nom" class="contact__input" required autocomplete="family-name" placeholder="Dupont" />
+            </div>
+            <div class="contact__field">
+              <label for="prenom" class="contact__label">Prénom <span aria-hidden="true">*</span></label>
+              <input type="text" id="prenom" name="prenom" class="contact__input" required autocomplete="given-name" placeholder="Jean" />
+            </div>
+          </div>
+
+          <div class="contact__field">
+            <label for="email" class="contact__label">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" class="contact__input" required autocomplete="email" placeholder="jean.dupont@example.fr" />
+          </div>
+
+          <div class="contact__field">
+            <label for="projet" class="contact__label">Type de projet <span aria-hidden="true">*</span></label>
+            <select id="projet" name="projet" class="contact__select" required>
+              <option value="" disabled selected>Choisissez une prestation</option>
+              <option value="entretien">Entretien de jardin</option>
+              <option value="creation">Création de jardin</option>
+              <option value="arrosage">Système d'arrosage</option>
+              <option value="maconnerie">Maçonnerie paysagère</option>
+              <option value="permaculture">Permaculture</option>
+              <option value="engazonnement">Engazonnement</option>
+              <option value="phytosanitaire">Traitement phytosanitaire</option>
+              <option value="taille">Taille des végétaux</option>
+              <option value="elagage">Élagage</option>
+              <option value="autre">Autre / Plusieurs prestations</option>
+            </select>
+          </div>
+
+          <div class="contact__field">
+            <label for="superficie" class="contact__label">Superficie du jardin</label>
+            <select id="superficie" name="superficie" class="contact__select">
+              <option value="" disabled selected>Sélectionnez une fourchette</option>
+              <option value="moins-100">Moins de 100 m²</option>
+              <option value="100-300">100 à 300 m²</option>
+              <option value="300-600">300 à 600 m²</option>
+              <option value="600-1000">600 m² à 1 000 m²</option>
+              <option value="1000-3000">1 000 à 3 000 m²</option>
+              <option value="plus-3000">Plus de 3 000 m²</option>
+            </select>
+          </div>
+
+          <div class="contact__field">
+            <label for="photo" class="contact__label">
+              Photo de votre jardin
+              <span class="contact__label-hint">(facultatif, PNG, JPG — max 5 Mo)</span>
+            </label>
+            <label for="photo" class="contact__file-label" aria-label="Téléverser une photo de votre jardin">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+              </svg>
+              <span>Choisir un fichier</span>
+            </label>
+            <input type="file" id="photo" name="photo" class="contact__file" accept="image/png,image/jpeg,image/webp" />
+          </div>
+
+          <div class="contact__field">
+            <label for="message" class="contact__label">Message <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" class="contact__textarea" required rows="4" placeholder="Décrivez votre projet, vos attentes, le meilleur moment pour vous contacter..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary contact__submit">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+            Envoyer ma demande
+          </button>
+        </form>
+      </div>
+
+      <div class="contact__info-col reveal reveal-delay-2">
+        <div class="contact__info-block">
+          <a href="tel:0667724805" class="contact__phone" aria-label="Appeler le 06 67 72 48 05">
+            <div class="contact__phone-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="contact__phone-label">Appelez-nous directement</p>
+              <p class="contact__phone-number">06 67 72 48 05</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="contact__details">
+          <div class="contact__detail-item">
+            <div class="contact__detail-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <p class="contact__detail-label">Adresse</p>
+              <address class="contact__detail-value" style="font-style: normal;">
+                Rue Janine Micheau<br />
+                84140 Avignon
+              </address>
+            </div>
+          </div>
+
+          <div class="contact__detail-item">
+            <div class="contact__detail-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div>
+              <p class="contact__detail-label">Horaires d'ouverture</p>
+              <table class="contact__hours" aria-label="Horaires d'ouverture">
+                <tbody>
+                  <tr>
+                    <th scope="row">Lun — Ven</th>
+                    <td>08:00 — 19:00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Samedi</th>
+                    <td>08:00 — 17:00</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Dimanche</th>
+                    <td>Fermé</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact__map">
+          <iframe
+            src="https://maps.google.com/maps?q=Rue+Janine+Micheau,+84140+Avignon,+France&hl=fr&output=embed"
+            title="Localisation d'Elith Paysages — Rue Janine Micheau, Avignon"
+            width="100%"
+            height="250"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            aria-label="Carte Google Maps — Elith Paysages à Avignon"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding-block: var(--space-4xl);
+    background-color: var(--color-bg);
+  }
+
+  .contact__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+
+  .contact__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .contact__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 480px) {
+    .contact__row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .contact__field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .contact__label {
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: var(--color-text);
+  }
+
+  .contact__label-hint {
+    font-weight: 400;
+    color: var(--color-text-light);
+    font-size: 0.75rem;
+    margin-left: var(--space-xs);
+  }
+
+  .contact__input,
+  .contact__select,
+  .contact__textarea {
+    width: 100%;
+    padding: 0.75rem var(--space-md);
+    border: 2px solid var(--color-neutral-dark);
+    border-radius: var(--radius-md);
+    background-color: var(--color-white);
+    color: var(--color-text);
+    transition: border-color var(--transition), box-shadow var(--transition);
+    min-height: 44px;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .contact__select {
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A6B5B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+    cursor: pointer;
+  }
+
+  .contact__input:focus,
+  .contact__select:focus,
+  .contact__textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(64, 114, 67, 0.15);
+  }
+
+  .contact__textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+  }
+
+  .contact__file {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .contact__file-label {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: 0.75rem var(--space-md);
+    border: 2px dashed var(--color-neutral-dark);
+    border-radius: var(--radius-md);
+    color: var(--color-text-light);
+    cursor: pointer;
+    transition: all var(--transition);
+    font-size: var(--text-sm);
+    min-height: 44px;
+    background-color: var(--color-neutral);
+  }
+
+  .contact__file-label:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background-color: rgba(64, 114, 67, 0.05);
+  }
+
+  .contact__submit {
+    width: 100%;
+    margin-top: var(--space-xs);
+    font-size: var(--text-lg);
+    padding-block: var(--space-md);
+  }
+
+  .contact__info-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .contact__phone {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--space-lg) var(--space-xl);
+    border-radius: var(--radius-lg);
+    transition: background-color var(--transition), transform var(--transition);
+    min-height: 44px;
+  }
+
+  .contact__phone:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+  }
+
+  .contact__phone-icon {
+    width: 48px;
+    height: 48px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact__phone-label {
+    font-size: var(--text-sm);
+    opacity: 0.85;
+  }
+
+  .contact__phone-number {
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .contact__details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .contact__detail-item {
+    display: flex;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .contact__detail-icon {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(64, 114, 67, 0.1);
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+
+  .contact__detail-label {
+    font-weight: 600;
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+  }
+
+  .contact__detail-value {
+    color: var(--color-text-light);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+  }
+
+  .contact__hours {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    border-collapse: collapse;
+  }
+
+  .contact__hours th {
+    font-weight: 600;
+    color: var(--color-text);
+    text-align: left;
+    padding-right: var(--space-md);
+    padding-block: 3px;
+    min-width: 100px;
+  }
+
+  .contact__hours td {
+    padding-block: 3px;
+  }
+
+  .contact__map {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .contact__map iframe {
+    display: block;
+    width: 100%;
+    border: none;
+  }
+
+  @media (min-width: 768px) {
+    .contact__map iframe {
+      height: 300px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .contact__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-3xl);
+      align-items: start;
+    }
+
+    .contact__map iframe {
+      height: 280px;
+    }
+  }
+</style>

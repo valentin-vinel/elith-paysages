@@ -1,0 +1,225 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer" aria-label="Pied de page">
+  <div class="footer__top">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="/" aria-label="Elith Paysages — Retour à l'accueil">
+          <img src="/logo.jpg" alt="Logo Elith Paysages" width="100" height="44" />
+        </a>
+        <p class="footer__tagline">Paysagiste à Avignon depuis 2016. Création, entretien et embellissement de jardins sur mesure dans le Vaucluse.</p>
+        <a href="tel:0667724805" class="btn btn-accent footer__phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.5a19.79 19.79 0 01-3.07-8.63A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+          </svg>
+          06 67 72 48 05
+        </a>
+      </div>
+
+      <nav class="footer__nav" aria-label="Navigation secondaire">
+        <h3 class="footer__nav-title">Navigation</h3>
+        <ul role="list">
+          <li><a href="#a-propos" class="footer__link">À propos</a></li>
+          <li><a href="#services" class="footer__link">Nos services</a></li>
+          <li><a href="#avis" class="footer__link">Avis clients</a></li>
+          <li><a href="#faq" class="footer__link">FAQ</a></li>
+          <li><a href="#contact" class="footer__link">Contact & Devis</a></li>
+        </ul>
+      </nav>
+
+      <div class="footer__services-list">
+        <h3 class="footer__nav-title">Prestations</h3>
+        <ul role="list">
+          <li><a href="#services" class="footer__link">Entretien de jardins</a></li>
+          <li><a href="#services" class="footer__link">Création de jardins</a></li>
+          <li><a href="#services" class="footer__link">Élagage & Taille</a></li>
+          <li><a href="#services" class="footer__link">Maçonnerie paysagère</a></li>
+          <li><a href="#services" class="footer__link">Permaculture</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__contact-info">
+        <h3 class="footer__nav-title">Coordonnées</h3>
+        <address style="font-style: normal;">
+          <p class="footer__contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Rue Janine Micheau, 84140 Avignon
+          </p>
+          <p class="footer__contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+            Lun-Ven : 08h00 – 19h00
+          </p>
+        </address>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <p class="footer__copyright">
+        &copy; {year} Elith Paysages — Tous droits réservés
+      </p>
+      <p class="footer__credit">
+        Site créé par <a href="#" class="footer__credit-link">Nelv Dev</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer__top {
+    background-color: var(--color-primary-dark);
+    color: var(--color-white);
+    padding-block: var(--space-3xl);
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+
+  .footer__brand {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .footer__brand img {
+    filter: brightness(0) invert(1);
+    opacity: 0.9;
+    height: 44px;
+    width: auto;
+  }
+
+  .footer__tagline {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    max-width: 300px;
+  }
+
+  .footer__phone {
+    align-self: flex-start;
+  }
+
+  .footer__nav-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-md);
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .footer__nav ul,
+  .footer__services-list ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .footer__link {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: var(--text-sm);
+    transition: color var(--transition), padding-left var(--transition);
+    display: inline-block;
+    padding-block: 4px;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer__link:hover {
+    color: var(--color-white);
+    padding-left: var(--space-xs);
+  }
+
+  .footer__contact-info address {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .footer__contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    color: rgba(255, 255, 255, 0.65);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+  }
+
+  .footer__contact-item svg {
+    flex-shrink: 0;
+    margin-top: 3px;
+    color: var(--color-accent-light);
+  }
+
+  .footer__bottom {
+    background-color: #1A2E1B;
+    padding-block: var(--space-md);
+  }
+
+  .footer__bottom-inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__copyright {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: var(--text-sm);
+  }
+
+  .footer__credit {
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 0.75rem;
+  }
+
+  .footer__credit-link {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: underline;
+    transition: color var(--transition);
+  }
+
+  .footer__credit-link:hover {
+    color: var(--color-accent-light);
+  }
+
+  @media (min-width: 768px) {
+    .footer__inner {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: var(--space-2xl);
+    }
+
+    .footer__contact-info {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer__inner {
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    }
+
+    .footer__contact-info {
+      grid-column: auto;
+    }
+
+    .footer__bottom-inner {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+</style>
