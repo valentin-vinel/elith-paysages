@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+  initHeroCarousel();
+
   const navToggle = document.getElementById('nav-toggle');
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -94,3 +96,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+function initHeroCarousel() {
+  const carousel = document.querySelector('.hero__carousel');
+  if (!carousel) return;
+
+  const items = carousel.querySelectorAll('.hero__carousel-item');
+  const dots = carousel.querySelectorAll('.hero__carousel-dot');
+  const prevBtn = carousel.querySelector('.hero__carousel-btn--prev');
+  const nextBtn = carousel.querySelector('.hero__carousel-btn--next');
+  const count = items.length;
+  let current = 0;
+  let timer;
+
+  function goTo(index) {
+    items[current].classList.remove('is-active');
+    dots[current]?.classList.remove('is-active');
+    current = (index + count) % count;
+    items[current].classList.add('is-active');
+    dots[current]?.classList.add('is-active');
+  }
+
+  function startAutoPlay() {
+    timer = setInterval(() => goTo(current + 1), 5000);
+  }
+
+  function stopAutoPlay() {
+    clearInterval(timer);
+  }
+
+  carousel.classList.add('js-controlled');
+  items[0].classList.add('is-active');
+  dots[0]?.classList.add('is-active');
+
+  prevBtn?.addEventListener('click', () => {
+    stopAutoPlay();
+    goTo(current - 1);
+    startAutoPlay();
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    stopAutoPlay();
+    goTo(current + 1);
+    startAutoPlay();
+  });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      stopAutoPlay();
+      goTo(i);
+      startAutoPlay();
+    });
+  });
+
+  startAutoPlay();
+}

@@ -45,13 +45,42 @@
     </div>
 
     <div class="hero__visual reveal reveal-delay-2">
-      <img
-        src="/photo-1.webp"
-        alt="Jardin aménagé par Elith Paysages à Avignon"
-        width="800"
-        height="500"
-        loading="eager"
-      />
+      <div class="hero__carousel" aria-label="Photos de réalisations Elith Paysages">
+        <div class="hero__carousel-item">
+          <img src="/photo-1.webp" alt="Jardin aménagé par Elith Paysages à Avignon" width="800" height="500" loading="eager" />
+        </div>
+        <div class="hero__carousel-item">
+          <img src="https://placehold.co/800x500/2d5230/c8e6c9?text=Création+de+jardin" alt="Création de jardin sur mesure" width="800" height="500" loading="lazy" />
+        </div>
+        <div class="hero__carousel-item">
+          <img src="https://placehold.co/800x500/1a3d1c/b8d4b9?text=Terrasse+%26+maçonnerie" alt="Terrasse et maçonnerie paysagère" width="800" height="500" loading="lazy" />
+        </div>
+        <div class="hero__carousel-item">
+          <img src="https://placehold.co/800x500/5a8c5d/e8f4e8?text=Entretien+des+végétaux" alt="Entretien et taille des végétaux" width="800" height="500" loading="lazy" />
+        </div>
+        <div class="hero__carousel-item">
+          <img src="https://placehold.co/800x500/407243/d4e9d5?text=Permaculture+%26+potager" alt="Aménagement permaculture et potager" width="800" height="500" loading="lazy" />
+        </div>
+
+        <button class="hero__carousel-btn hero__carousel-btn--prev" aria-label="Photo précédente">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="hero__carousel-btn hero__carousel-btn--next" aria-label="Photo suivante">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+
+        <div class="hero__carousel-dots" aria-hidden="true">
+          <span class="hero__carousel-dot"></span>
+          <span class="hero__carousel-dot"></span>
+          <span class="hero__carousel-dot"></span>
+          <span class="hero__carousel-dot"></span>
+          <span class="hero__carousel-dot"></span>
+        </div>
+      </div>
       <div class="hero__badge" aria-label="Note Google : 5 étoiles sur 5, 8 avis">
         <div class="hero__badge-stars" aria-hidden="true">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -291,11 +320,106 @@
     position: relative;
   }
 
-  .hero__visual img {
+  .hero__carousel {
     width: 100%;
+    position: relative;
+    padding-top: 62.5%;
     border-radius: var(--radius-xl);
+    overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     border: 3px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .hero__carousel-item {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    animation: carousel-fade 25s infinite;
+  }
+
+  .hero__carousel-item:nth-child(1) { animation-delay: 0s; }
+  .hero__carousel-item:nth-child(2) { animation-delay: 5s; }
+  .hero__carousel-item:nth-child(3) { animation-delay: 10s; }
+  .hero__carousel-item:nth-child(4) { animation-delay: 15s; }
+  .hero__carousel-item:nth-child(5) { animation-delay: 20s; }
+
+  .hero__carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  @keyframes carousel-fade {
+    0%   { opacity: 0; transform: scale(1.04); }
+    4%   { opacity: 1; transform: scale(1.04); }
+    16%  { opacity: 1; transform: scale(1); }
+    20%  { opacity: 0; transform: scale(0.98); }
+    100% { opacity: 0; transform: scale(1.04); }
+  }
+
+  .hero__carousel.js-controlled .hero__carousel-item {
+    animation: none;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    transform: scale(1.04);
+  }
+
+  .hero__carousel.js-controlled .hero__carousel-item.is-active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .hero__carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    color: var(--color-white);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color var(--transition);
+    z-index: 10;
+    opacity: 1;
+    transition: background-color var(--transition);
+  }
+
+  .hero__carousel-btn:hover {
+    background-color: rgba(255, 255, 255, 0.35);
+  }
+
+  .hero__carousel-btn--prev { left: 0.75rem; }
+  .hero__carousel-btn--next { right: 0.75rem; }
+
+  .hero__carousel-dots {
+    position: absolute;
+    bottom: 0.75rem;
+    left: 15%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+  }
+
+  .hero__carousel-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.45);
+    transition: background-color var(--transition), transform var(--transition);
+    cursor: pointer;
+  }
+
+  .hero__carousel-dot.is-active {
+    background-color: var(--color-white);
+    transform: scale(1.35);
   }
 
   .hero__badge {
