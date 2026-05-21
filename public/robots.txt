@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://elith-paysages.fr/sitemap.xml
