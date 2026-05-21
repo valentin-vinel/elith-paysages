@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+
+const year = new Date().getFullYear();
+---
+
+<Layout>
+  <nav class="nav" aria-label="Navigation principale">
+    <div class="container nav__inner">
+      <a href="/" class="nav__logo" aria-label="Elith Paysages — Retour à l'accueil">
+        <img src="/logo.jpg" alt="Logo Elith Paysages" width="120" height="48" />
+      </a>
+      <a href="/" class="nav__back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+        Retour à l'accueil
+      </a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="ml-hero">
+      <div class="container">
+        <h1 class="ml-hero__title">Mentions légales</h1>
+        <p class="ml-hero__subtitle">Informations légales relatives au site elith-paysages.fr</p>
+      </div>
+    </div>
+
+    <div class="ml-content">
+      <div class="container ml-container">
+
+        <section class="ml-section">
+          <h2 class="ml-section__title">1. Éditeur du site</h2>
+          <div class="ml-section__body">
+            <p><strong>Raison sociale :</strong> Elith Paysages</p>
+            <p><strong>Forme juridique :</strong> Société à responsabilité limitée (SARL)</p>
+            <p><strong>Dirigeante :</strong> Loubna Hasnaoui Amri</p>
+            <p><strong>Adresse :</strong> Rue Janine Micheau, 84140 Avignon</p>
+            <p><strong>Téléphone :</strong> <a href="tel:0667724805">06 67 72 48 05</a></p>
+            <p><strong>SIRET :</strong> 93213784700012</p>
+            <p><strong>Code APE :</strong> 8130Z - Services d'aménagement paysager</p>
+          </div>
+        </section>
+
+        <section class="ml-section">
+          <h2 class="ml-section__title">2. Directrice de la publication</h2>
+          <div class="ml-section__body">
+            <p>Loubna Hasnaoui Amri, en qualité de gérante d'Elith Paysages.</p>
+          </div>
+        </section>
+
+        <section class="ml-section">
+          <h2 class="ml-section__title">3. Hébergement</h2>
+          <div class="ml-section__body">
+            <p><strong>Hébergeur :</strong> Vercel Inc.</p>
+            <p><strong>Adresse :</strong> 340 Pine Street, Suite 701, San Francisco, CA 94104, États-Unis</p>
+            <p><strong>Site web :</strong> <a href="https://vercel.com" target="_blank" rel="noopener noreferrer">vercel.com</a></p>
+          </div>
+        </section>
+
+        <section class="ml-section">
+          <h2 class="ml-section__title">4. Propriété intellectuelle</h2>
+          <div class="ml-section__body">
+            <p>L'ensemble des éléments constituant ce site (textes, photographies, logos, images, illustrations) est la propriété exclusive d'Élith Paysages ou fait l'objet d'une autorisation d'utilisation.</p>
+            <p>Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite sans autorisation écrite préalable d'Élith Paysages.</p>
+          </div>
+        </section>
+
+        <section class="ml-section">
+          <h2 class="ml-section__title">5. Données personnelles & RGPD</h2>
+          <div class="ml-section__body">
+            <p>Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez des droits suivants concernant vos données personnelles :</p>
+            <ul class="ml-list">
+              <li>Droit d'accès et de rectification de vos données</li>
+              <li>Droit à l'effacement (droit à l'oubli)</li>
+              <li>Droit à la limitation du traitement</li>
+              <li>Droit à la portabilité de vos données</li>
+              <li>Droit d'opposition au traitement</li>
+            </ul>
+            <p>Les données collectées via le formulaire de contact (nom, prénom, adresse e-mail, message) sont utilisées uniquement pour répondre à vos demandes. Elles ne sont ni vendues ni transmises à des tiers.</p>
+          </div>
+        </section>
+
+        <section class="ml-section">
+          <h2 class="ml-section__title">6. Cookies</h2>
+          <div class="ml-section__body">
+            <p>Ce site n'utilise pas de cookies de traçage ou de ciblage publicitaire. Des cookies techniques strictement nécessaires au bon fonctionnement du site peuvent être déposés sur votre appareil.</p>
+            <p>Conformément à la réglementation en vigueur, ces cookies ne nécessitent pas votre consentement préalable.</p>
+          </div>
+        </section>
+
+        <section class="ml-section">
+          <h2 class="ml-section__title">7. Responsabilité</h2>
+          <div class="ml-section__body">
+            <p>Élith Paysages s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur ce site. Toutefois, sa responsabilité ne peut être engagée en cas d'omission, d'inexactitude ou de carence dans la mise à jour des informations.</p>
+            <p>Élith Paysages ne saurait être tenue responsable des dommages directs ou indirects causés au matériel de l'utilisateur lors de l'accès au site.</p>
+          </div>
+        </section>
+
+        <section class="ml-section">
+          <h2 class="ml-section__title">8. Réalisation du site</h2>
+          <div class="ml-section__body">
+            <p>Site conçu et développé par <a href="https://www.valentin-vinel.fr" target="_blank" rel="noopener noreferrer">Valentin V. - Nelv Dev</a>.</p>
+          </div>
+        </section>
+
+        <p class="ml-update">Dernière mise à jour : mai {year}</p>
+
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--color-white);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .nav__logo img {
+    height: 44px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .nav__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    min-height: 44px;
+    transition: gap var(--transition);
+  }
+
+  .nav__back:hover {
+    gap: var(--space-sm);
+  }
+
+  .ml-hero {
+    background: linear-gradient(150deg, #1a2e1c 0%, var(--color-primary) 100%);
+    padding-block: var(--space-3xl) var(--space-2xl);
+    color: var(--color-white);
+  }
+
+  .ml-hero__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+  }
+
+  .ml-hero__subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: var(--text-md);
+  }
+
+  .ml-content {
+    padding-block: var(--space-3xl);
+    background-color: var(--color-bg);
+  }
+
+  .ml-container {
+    max-width: 780px;
+  }
+
+  .ml-section {
+    margin-bottom: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+    border-bottom: 1px solid var(--color-neutral-dark);
+  }
+
+  .ml-section:last-of-type {
+    border-bottom: none;
+  }
+
+  .ml-section__title {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-lg);
+    padding-left: var(--space-md);
+    border-left: 3px solid var(--color-accent);
+  }
+
+  .ml-section__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    color: var(--color-text-light);
+    font-size: var(--text-md);
+    line-height: 1.8;
+  }
+
+  .ml-section__body strong {
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .ml-section__body a {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .ml-section__body a:hover {
+    color: var(--color-primary-dark);
+  }
+
+  .ml-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding-left: var(--space-md);
+  }
+
+  .ml-list li::before {
+    content: '–';
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-right: var(--space-sm);
+  }
+
+  .ml-update {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    text-align: right;
+    font-style: italic;
+    margin-top: var(--space-xl);
+  }
+
+  @media (min-width: 768px) {
+    .ml-hero__title {
+      font-size: var(--text-4xl);
+    }
+  }
+</style>

@@ -1,0 +1,176 @@
+---
+const articles = [
+  {
+    media: "ADIE",
+    logo: "/logo-adie.webp",
+    titre: "À Avignon, Loubna cultive la réussite avec Élith Paysages",
+    extrait: "Loubna transforme son amour pour la terre en une entreprise florissante : Élith Paysages. Installée à Avignon, la lauréate régionale du prix Femmes Provence Méditerranée 2026 brave le sexisme d'un milieu très masculin pour s'imposer comme une paysagiste de talent.",
+    date: "2026",
+    url: "https://www.adie.org/a-la-une/portrait/a-avignon-loubna-cultive-la-reussite-avec-elith-paysages/",
+    urlLabel: "Lire l'article sur adie.org",
+  },
+  {
+    media: "Echo du Mardi",
+    logo: "/logo-echo-mardi.webp",
+    titre: "Les lauréats vauclusiens des prix Créadie 2026 mis à l'honneur",
+    extrait: "Plutôt que de chercher un employeur, elle fonde Élith Paysages, un prénom composé à partir de ceux de ses deux enfants, Eliana et Leith. Sa signature : des « jardins qui se mangent », où le romarin remplace la pelouse et où les fruitiers dessinent les haies.",
+    date: "2026",
+    url: "https://www.echodumardi.com/economie/video-deux-vauclusiens-forgent-leur-avenir-grace-au-microcredit/",
+    urlLabel: "Lire l'article sur echodumardi.com",
+  },
+];
+---
+
+<section class="presse" id="presse" aria-labelledby="presse-title">
+  <div class="container">
+    <header class="section-header reveal">
+      <span class="section-tag">Presse & Médias</span>
+      <h2 class="section-title" id="presse-title">Ils parlent de nous</h2>
+      <p class="section-subtitle">Élith Paysages dans les médias locaux et nationaux</p>
+    </header>
+
+    <div class="presse__grid reveal">
+      {articles.map((article) => (
+        <a
+          href={article.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="presse__card"
+          aria-label={`Lire l'article de ${article.media} : ${article.titre}`}
+        >
+          <div class="presse__card-top">
+            <img src={article.logo} alt="Logo du média" class="logo-media" />
+            <span class="presse__date">{article.date}</span>
+          </div>
+
+          <blockquote class="presse__quote">
+            <svg class="presse__quote-icon" width="20" height="20" viewBox="0 0 28 20" fill="currentColor" aria-hidden="true">
+              <path d="M0 20V12.364C0 5.394 3.879 1.212 11.636 0l1.091 1.818C9.03 2.788 7.121 4.939 6.545 8.364H11V20H0zm16 0V12.364C16 5.394 19.879 1.212 27.636 0l1.091 1.818c-3.697.97-5.606 3.121-6.182 6.546H27V20H16z"/>
+            </svg>
+            <p>{article.extrait}</p>
+          </blockquote>
+
+          <div class="presse__card-footer">
+            <h3 class="presse__article-title">{article.titre}</h3>
+            <span class="presse__link">
+              {article.urlLabel}
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                <polyline points="15 3 21 3 21 9"/>
+                <line x1="10" y1="14" x2="21" y2="3"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .presse {
+    padding-block: var(--space-4xl);
+    background-color: var(--color-white);
+  }
+
+  .presse__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .presse__card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+    border-bottom: 3px solid transparent;
+    transition: transform var(--transition), box-shadow var(--transition), border-bottom-color var(--transition);
+  }
+
+  .presse__card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-bottom-color: var(--color-primary);
+  }
+
+  .presse__card-top {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    gap: var(--space-sm);
+  }
+
+  .presse__date {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    font-weight: 500;
+    text-align: end;
+  }
+
+  .presse__quote {
+    border-left: 3px solid var(--color-accent);
+    padding-left: var(--space-md);
+    margin: 0;
+    flex: 1;
+  }
+
+  .presse__quote-icon {
+    color: var(--color-accent);
+    opacity: 0.3;
+    margin-bottom: var(--space-sm);
+  }
+
+  .presse__quote p {
+    font-size: var(--text-sm);
+    color: var(--color-text-light);
+    line-height: 1.8;
+    font-style: italic;
+  }
+
+  .presse__card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-neutral-dark);
+  }
+
+  .presse__article-title {
+    font-family: var(--font-heading);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.3;
+  }
+
+  .presse__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: var(--text-sm);
+    min-height: 44px;
+    transition: gap var(--transition);
+  }
+
+  .presse__link:hover {
+    gap: var(--space-sm);
+  }
+
+  .logo-media {
+    width: 60px;
+  }
+
+  @media (min-width: 768px) {
+    .presse__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-xl);
+    }
+  }
+</style>
