@@ -55,6 +55,12 @@ const year = new Date().getFullYear();
             </svg>
             Lun-Ven : 08h00 - 19h00
           </p>
+          <p class="footer__contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <a href="mailto:elith.paysages@gmail.com" class="footer__contact-link">elith.paysages@gmail.com</a>
+          </p>
         </address>
       </div>
     </div>
@@ -162,6 +168,15 @@ const year = new Date().getFullYear();
     color: var(--color-accent-light);
   }
 
+  .footer__contact-link {
+    color: rgba(255, 255, 255, 0.65);
+    transition: color var(--transition);
+  }
+
+  .footer__contact-link:hover {
+    color: var(--color-white);
+  }
+
   .footer__bottom {
     background-color: #1A2E1B;
     padding-block: var(--space-md);
@@ -192,6 +207,11 @@ const year = new Date().getFullYear();
 
   .footer__credit-link:hover {
     color: var(--color-accent-light);
+  }
+
+  .mentions-legales:hover {
+    color: var(--color-accent-light);
+    text-decoration: underline;
   }
 
   @media (min-width: 768px) {
