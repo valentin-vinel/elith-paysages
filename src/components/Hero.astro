@@ -1,30 +1,30 @@
 ---
 ---
 
+<nav class="nav" aria-label="Navigation principale">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo" aria-label="Elith Paysages — Accueil">
+      <img src="/logo.jpg" alt="Logo Elith Paysages" width="120" height="48" />
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav__toggle-input" aria-hidden="true" />
+    <label for="nav-toggle" class="nav__burger" aria-label="Ouvrir le menu de navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <ul class="nav__menu" role="list">
+      <li><a href="#a-propos" class="nav__link">À propos</a></li>
+      <li><a href="#services" class="nav__link">Services</a></li>
+      <li><a href="#avis" class="nav__link">Avis</a></li>
+      <li><a href="#faq" class="nav__link">FAQ</a></li>
+      <li><a href="#contact" class="nav__link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
 <header class="hero" id="accueil">
-  <nav class="nav" aria-label="Navigation principale">
-    <div class="container nav__inner">
-      <a href="/" class="nav__logo" aria-label="Elith Paysages — Accueil">
-        <img src="/logo.jpg" alt="Logo Elith Paysages" width="120" height="48" />
-      </a>
-
-      <input type="checkbox" id="nav-toggle" class="nav__toggle-input" aria-hidden="true" />
-      <label for="nav-toggle" class="nav__burger" aria-label="Ouvrir le menu de navigation">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-
-      <ul class="nav__menu" role="list">
-        <li><a href="#a-propos" class="nav__link">À propos</a></li>
-        <li><a href="#services" class="nav__link">Services</a></li>
-        <li><a href="#avis" class="nav__link">Avis</a></li>
-        <li><a href="#faq" class="nav__link">FAQ</a></li>
-        <li><a href="#contact" class="nav__link">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
   <div class="container hero__inner">
     <div class="hero__content reveal">
       <span class="hero__tag">Paysagiste à Avignon</span>
@@ -50,16 +50,16 @@
           <img src="/photo-1.webp" alt="Jardin aménagé par Elith Paysages à Avignon" width="800" height="500" loading="eager" />
         </div>
         <div class="hero__carousel-item">
-          <img src="https://placehold.co/800x500/2d5230/c8e6c9?text=Création+de+jardin" alt="Création de jardin sur mesure" width="800" height="500" loading="lazy" />
+          <img src="/photo-2.webp" alt="Taille de haie par Elith Paysages" width="800" height="500" loading="lazy" />
         </div>
         <div class="hero__carousel-item">
-          <img src="https://placehold.co/800x500/1a3d1c/b8d4b9?text=Terrasse+%26+maçonnerie" alt="Terrasse et maçonnerie paysagère" width="800" height="500" loading="lazy" />
+          <img src="/photo-3.webp" alt="Taille de haie et cyprès par Elith Paysages" width="800" height="500" loading="lazy" />
         </div>
         <div class="hero__carousel-item">
-          <img src="https://placehold.co/800x500/5a8c5d/e8f4e8?text=Entretien+des+végétaux" alt="Entretien et taille des végétaux" width="800" height="500" loading="lazy" />
+          <img src="/photo-4.webp" alt="Jardin aménagé par Elith Paysages" width="800" height="500" loading="lazy" />
         </div>
         <div class="hero__carousel-item">
-          <img src="https://placehold.co/800x500/407243/d4e9d5?text=Permaculture+%26+potager" alt="Aménagement permaculture et potager" width="800" height="500" loading="lazy" />
+          <img src="/photo-5.webp" alt="Jardin aménagé par Elith Paysages" width="800" height="500" loading="lazy" />
         </div>
 
         <button class="hero__carousel-btn hero__carousel-btn--prev" aria-label="Photo précédente">
@@ -112,6 +112,7 @@
     position: relative;
     overflow: hidden;
     clip-path: ellipse(160% 96% at 50% 4%);
+    padding-top: 68px;
     padding-bottom: 8%;
   }
 
@@ -125,12 +126,13 @@
   }
 
   .nav {
-    position: sticky;
+    position: fixed;
     top: 0;
-    z-index: 100;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     background-color: white;
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.08);
   }
 
   .nav__inner {
