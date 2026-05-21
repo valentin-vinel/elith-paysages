@@ -11,7 +11,23 @@
 
     <div class="contact__inner">
       <div class="contact__form-col reveal">
-        <form class="contact__form" name="contact" method="POST" enctype="multipart/form-data" aria-label="Formulaire de demande de devis">
+        <form
+          class="contact__form"
+          name="contact"
+          method="POST"
+          enctype="multipart/form-data"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          aria-label="Formulaire de demande de devis"
+        >
+          <!-- Champ caché requis par Netlify -->
+          <input type="hidden" name="form-name" value="contact" />
+
+          <!-- Honeypot anti-spam -->
+          <p style="display:none">
+            <label>Ne pas remplir : <input name="bot-field" /></label>
+          </p>
+
           <div class="contact__row">
             <div class="contact__field">
               <label for="nom" class="contact__label">Nom <span aria-hidden="true">*</span></label>
@@ -67,7 +83,7 @@
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
               </svg>
-              <span>Choisir un fichier</span>
+              <span id="fileNameDisplay">Choisir un fichier</span>
             </label>
             <input type="file" id="photo" name="photo" class="contact__file" accept="image/png,image/jpeg,image/webp" />
           </div>
@@ -160,6 +176,16 @@
     </div>
   </div>
 </section>
+
+<script>
+  const photoInput = document.getElementById('photo') as HTMLInputElement;
+  const fileNameDisplay = document.getElementById('fileNameDisplay') as HTMLSpanElement;
+
+  photoInput?.addEventListener('change', () => {
+    const file = photoInput.files?.[0];
+    fileNameDisplay.textContent = file ? file.name : 'Choisir un fichier';
+  });
+</script>
 
 <style>
   .contact {
